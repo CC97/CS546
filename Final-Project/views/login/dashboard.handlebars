@@ -1,0 +1,118 @@
+<div class="dashboard-header">
+    <p class="rightAlign"><span>{{title}}</span>{{user.firstName}} {{user.lastName}}</p>
+    <p class="rightAlign" id="accountId" title="{{account._id}}">Account ID: {{account._id}}</p> 
+    <p class="rightAlign">Account type: {{account.accountType}}</p>
+</div>
+
+<div id="body-box">
+    <div class="dashboard-container">
+        <div class="centerBalance">
+            <p id="balance">${{account.balance}}</p>
+            <p>Balance</p>
+        </div>
+
+        <form action='/deposit/{{account._id}}'>
+            <button type="submit" class="btn btn-dark">Make a deposit</button>
+        </form>
+        <br>
+        <form action="/transaction/{{account._id}}">
+            <button type="submit" class="btn btn-dark">Make a transaction</button>
+        </form>
+        <br>
+
+        <h1>Transaction History</h1>
+        {{!-- filter by month --}}
+        <form id="selectMonth-form">
+            <label for="selectMonth">Select by month:</label>
+            <input id="selectMonth" type="month" name="selectMonth">
+            Sort by amount:
+            <input id="month-ascending" type="radio" name="monthSort" value="1">
+            <label for="month-ascending">ascending</label>
+            
+            <input id="month-descending" type="radio" name="monthSort" value="-1">
+            <label for="month-descending">descending</label>
+            
+            <input id="month-no-sort" type="radio" checked="checked" name="monthSort" value="0">
+            <label for="month-no-sort">no-sort</label>
+
+            <button type="submit" id="monthSubmit" class="btn btn-dark">Submit</button>
+        </form>
+         {{!-- filter by tag --}}
+        <form id="selectTag-form">
+            <label for="selectTag">Select by tag:</label>
+            <select id="selectTag" name="selectTag">
+                <option value="food">Food</option>
+                <option value="goods and services">Goods and Services</option>
+                <option value="transport">Transport</option>
+                <option value="utilities">Utilities</option>
+                <option value="investment">Investment</option>
+                <option value="salary">Salary</option>
+                <option value="other">Other</option>
+            </select>
+
+            Sort by amount:
+            <input id="tag-ascending" type="radio" name="tagSort" value="1">
+            <label for="tag-ascending">ascending</label>
+            
+            <input id="tag-descending" type="radio" name="tagSort" value="-1">
+            <label for="tag-descending">descending</label>
+            
+            <input id="tag-no-sort" type="radio" checked="checked" name="tagSort" value="0">
+            <label for="tag-no-sort">no-sort</label>
+
+            <button type="submit" id="tagSubmit" class="btn btn-dark">Submit</button>
+        </form>
+        {{!-- filter by type --}}
+        <form id="selectType-form">
+            <label for="selectType">Select by type:</label>
+            <select id="selectType" name="selectType">
+                <option value="internal_deposit">income</option>
+                <option value="external_transaction">expense</option>
+            </select>
+
+            Sort by amount:
+            <input id="type-ascending" type="radio" name="typeSort" value="1">
+            <label for="type-ascending">ascending</label>
+            
+            <input id="type-descending" type="radio" name="typeSort" value="-1">
+            <label for="type-descending">descending</label>
+            
+            <input id="type-no-sort" type="radio" checked="checked" name="typeSort" value="0">
+            <label for="type-no-sort">no-sort</label>
+
+            <button type="submit" id="typeSubmit" class="btn btn-dark">Submit</button>
+        </form>
+        {{!-- SHOW ALL --}}
+        <div id="showAllRight">
+            <button id="showAll" type="button" class="btn btn-dark">Show all</button>
+        </div>
+        <table class="table table-striped table-borderless table-hover" id="transList"></table>
+        <p id="noTrans">View your history by first making a deposit or transaction</p>
+        
+        <div>
+            <h2>Trend</h2>
+            <p>Select the tag you want to compare with last month</p>
+            <form id="trend-form">
+                <label for="trendTag">Tag:</label>
+                <select id="trendTag" name="trendTag">
+                    <option value="food">Food</option>
+                    <option value="goods and services">Goods and Services</option>
+                    <option value="transport">Transport</option>
+                    <option value="utilities">Utilities</option>
+                    <option value="investment">Investment</option>
+                    <option value="salary">Salary</option>
+                    <option value="other">Other</option>
+                </select>
+                <button type="submit" id="trendSubmit" class="btn btn-dark">Submit</button>
+            </form>
+            <ul id="trend"></ul>
+        </div>
+
+        <div id="printBtn">
+            <button id="print" onclick="window.print()">Export this page as a PDF</button>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/public/js/transFilter.js"></script>
+{{!-- <script src="/public/js/dashboard.js"></script> --}}

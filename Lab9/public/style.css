@@ -1,0 +1,59 @@
+html,
+body {
+	font-size: 14pt;
+	color:#000;
+	background:#fff;
+	margin:0 auto;
+	padding:0;
+	font-family:Georgia,Palatino,serif;
+}
+
+h1{
+	color: rgb(0, 140, 255);
+}
+
+#formLabel{
+	color: #4CAF50;
+}
+
+.error{
+	color: #FF0000;
+}
+
+.is-palindrome{
+    color: #0000FF;
+}
+
+.non-palindrome{
+    color:#FF0000;
+}
+
+.inputClass {
+	border: 3px solid red;
+
+	background-color: #eee;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 6px 32px;
+    font-size: 14px;
+}
+
+.btn-submit:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+footer{
+	clear: both;
+    display: block;
+    text-align: center;	
+    margin: 0px auto;
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+}
+
+

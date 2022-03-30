@@ -1,0 +1,106 @@
+html,
+body {
+	font-size: 14pt;
+}
+
+main {
+	max-width: 75%;
+	margin: auto;
+}
+
+h1.title {
+	border: 3px solid red;
+	color: blue;
+	text-align: center;
+}
+
+.description{
+	text-indent: 50px;
+  	text-align: justify;
+  	letter-spacing: 3px;
+}
+
+.input{
+	border: 1px solid #ccc; 
+	padding: 7px 0px;
+	border-radius: 3px;
+	padding-left:5px; 
+}
+
+.label{
+	font-size: 20px;
+	font-weight: bold;
+	color: blueviolet;
+}
+
+.btn{
+	background-color: white;
+  	color: black;
+	font-size: 16px;
+  	border: 3px solid green; 
+}
+
+h2.name{
+	color: blue;
+	font-style:oblique;
+}
+
+.results{
+	list-style-type:square;
+	font-size: large;
+	color: bisque;
+}
+
+.back{
+	background-color: white;
+  	color: black;
+	font-size: 16px;
+  	border: 3px solid red; 
+}
+
+.errorBack{
+	background-color: white;
+  	color: rgb(250, 4, 4);
+	font-size: 16px;
+  	border: 3px solid rgb(0, 17, 255); 
+}
+
+.error{
+	border: 3px solid red;
+	color: rgb(255, 51, 0);
+	text-align: center;
+}
+
+
+.singleHero{
+	color: rgb(255, 51, 0);
+	font-style:oblique;
+}
+
+.picture{
+	display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.heroDescription{
+	text-indent: 50px;
+  	text-align: justify;
+  	letter-spacing: 3px;
+	border: 3px solid rgb(238, 255, 0);
+	color: blue;
+}
+
+h2.comics{
+	color: blue;
+	font-style:oblique;
+}
+
+.comicsName{
+	text-indent: 50px;
+  	text-align: justify;
+  	letter-spacing: 3px;
+	color: rgb(255, 0, 200);
+}

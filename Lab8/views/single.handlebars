@@ -1,0 +1,15 @@
+<main>
+        {{#each hero}}
+        <div>
+            <h1 class="singleHero">{{this.name}}</h1>
+            <img class="picture" src="{{this.thumbnail.path}}/portrait_xlarge.jpg">
+            <p class="heroDescription">{{this.description}}</p>
+            <h2 class="comics">Comics</h2>
+            <ul class="results">
+                {{#each this.comics.items}}
+                <li class="comicsName">{{this.name}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+</main>
